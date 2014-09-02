@@ -48,8 +48,10 @@ class SportcenterTest < ActiveSupport::TestCase
     field = FactoryGirl.create(:field)
     @sportcenter.save
     @sportcenter.fields << field
-    @sportcenter.destroy
-    assert_equal nil, field
+    assert_difference("Field.count", -1) do
+      @sportcenter.destroy
+    end
+
   end
 
 end
