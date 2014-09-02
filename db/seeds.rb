@@ -28,8 +28,8 @@ player_3 = Player.create(name: "Robert", surname: "Pires", email: "robert@pires.
 player_4 = Player.create(name: "Thierry", surname: "Henry", email: "thierry@henry.com")
 player_5 = Player.create(name: "Jack", surname: "Wilsher", email: "jack@wilsher.com")
 
-emirates = Sportcenter.create(name: "Emirates Stadium")
-santiago = Sportcenter.create(name: "Santiago Bernabeu")
+emirates = Sportcenter.create(name: "Emirates Stadium", adress: "London", phone:"123456789")
+santiago = Sportcenter.create(name: "Santiago Bernabeu", adress: "Madrit", phone:"987654321")
 
 field_emirates_1 = Field.create(name: "Big grass", sportcenter_id: emirates.id)
 field_emirates_2 = Field.create(name: "Small grass", sportcenter_id: emirates.id)
