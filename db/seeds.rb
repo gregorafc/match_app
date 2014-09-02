@@ -10,6 +10,8 @@ User.delete_all
 Player.delete_all
 Sportcenter.delete_all
 Field.delete_all
+Event.delete_all
+Participation.delete_all
 
 
 user_1 = User.new( name: 'Jon', surname: 'Doe', email: 'jon@doe.com', password: '12341234')
@@ -33,3 +35,11 @@ field_emirates_1 = Field.create(name: "Big grass", sportcenter_id: emirates.id)
 field_emirates_2 = Field.create(name: "Small grass", sportcenter_id: emirates.id)
 field_santiago_1 = Field.create(name: "Big grass", sportcenter_id: santiago.id)
 field_santiago_2 = Field.create(name: "Small grass", sportcenter_id: santiago.id)
+
+event_1 = Event.create( game_name:"Derby", user_id: user_1.id)
+
+
+
+
+
+
