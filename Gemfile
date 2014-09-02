@@ -41,3 +41,4 @@ gem 'spring',        group: :development
 
 gem 'devise'
 
+gem 'factory_girl_rails'
