@@ -1,3 +1,25 @@
-<table>
-
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Ośrodek treningowy</th>
+      <th>Boiska</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @sportcenters.each do |sportcenter| %>
+      <tr>
+          <td><%= sportcenter.name %>
+              <%= link_to 'Szczegóły', sportcenter %>
+              <%= link_to 'Edytuj', edit_sportcenter_path(sportcenter) %>
+              <%= link_to 'Usuń', sportcenter, method: :delete, data: { confirm: 'Czy na pewno?' } %>
+          </td>
+          <td>
+            <ul>
+              <% sportcenter.fields.each do |field| %>
+                <li><%= field.name %></li>
+              <% end %>
+          </td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
