@@ -9,4 +9,14 @@ FactoryGirl.define do
     name { |n| "Field : #{n}"}
   end
 
+  factory :player do
+    name "Jon"
+    surname "Doe"
+    email { |n| "jon#{n}@doe.com"}
+  end
+
+  factory :event do
+    game_name "Derby"
+  end
+
 end
