@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
+  
   devise_for :users
+  resources :users
 
+  root 'sportcenters#index'
 
+  resources :events
   resources :fields
 
   resources :sportcenters do

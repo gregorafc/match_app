@@ -11,7 +11,34 @@
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
 
-<%= yield %>
+  <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+      <%= link_to "Organizer rozgrywek amatorskich", events_path, class: "navbar-brand" %>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <% if user_signed_in? %>
+              <li><a>Logged in as <strong><%= current_user.email %></strong>.</a></li>
+              <li><%= link_to 'Edytuj profil', edit_user_registration_path %></li>
+              <li><%= link_to 'Wyloguj', destroy_user_session_path, method: :delete %></li>
+            <% else %>
+              <li><%= link_to 'Rejestracja', new_user_registration_path %></li>
+              <li><%= link_to 'Logowanie', new_user_session_path %></li>
+            <% end %>
+          </ul>
+        </div>
+    </div>
+  </div>
+  
+  <div class="container-fluid">
+    <div class="row">
+      <%= render 'layouts/navigation' if current_user %>
+        <ul class="nav nav-sidebar">
+    </div>
+    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+    <%= yield %>
+    </div>
+  </div>
+
 
 </body>
 </html>
