@@ -1,5 +1,5 @@
 <%= simple_form_for @field do |f| %>
   <%= f.input :name, label: 'Nazwa boiska' %>
-  <%= f.hidden_field :sportcenter_id, value: params[:sportcenter_id] %>
+  <%= f.hidden_field :sportcenter_id, value: @sportcenter_id %>
   <%= f.button :submit, 'Potwierdź' %>
 <% end %>

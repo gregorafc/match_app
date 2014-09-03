@@ -6,3 +6,4 @@
 
 <%= link_to 'Powrót', sportcenters_path %>
 <%= link_to 'Edycja', edit_sportcenter_path(@sportcenter) %>
+<%= link_to 'Usuń', @sportcenter, method: :delete, data: { confirm: 'Czy na pewno?' } %>

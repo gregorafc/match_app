@@ -3,4 +3,6 @@
 <p>Nazwa boiska: <%= @field.name %></p>
 
 <%= link_to "Powrót", sportcenters_path %>
+<%= link_to "Edytuj", edit_sportcenter_field_path(id: @field.id, sportcenter_id: @sportcenter_id) %>
+<%= link_to "Usuń", @field, method: :delete, data: { confirm: "Czy na pewno?"} %>
 
