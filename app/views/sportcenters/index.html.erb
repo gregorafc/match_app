@@ -15,11 +15,15 @@
               <%= link_to 'Szczegóły', sportcenter %>
               <%= link_to 'Edytuj', edit_sportcenter_path(sportcenter) %>
               <%= link_to 'Usuń', sportcenter, method: :delete, data: { confirm: 'Czy na pewno?' } %>
+              <%= link_to 'Dodaj boisko treningowe', new_sportcenter_field_path(sportcenter) %>
           </td>
           <td>
             <ul>
               <% sportcenter.fields.each do |field| %>
-                <li><%= field.name %></li>
+                <li><%= field.name %>
+                    <%= link_to 'Szczegóły', sportcenter_field_path(id: field.id, sportcenter_id: sportcenter.id) %>
+
+                </li>
               <% end %>
           </td>
       </tr>
