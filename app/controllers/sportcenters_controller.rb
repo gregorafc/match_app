@@ -22,6 +22,7 @@ class SportcentersController < ApplicationController
 
   def update
     build_sportcenter
+    save_sportcenter or render :new
   end
 
   def destroy
@@ -50,7 +51,8 @@ class SportcentersController < ApplicationController
   end
 
   def sportcenter_params
-    params.require(:sportcenter).permit(:name, :adress, :phone)
+    sportcenter_params = params[:sportcenter]
+    sportcenter_params ? sportcenter_params.permit(:name, :adress, :phone) : {}
   end
 
 end
