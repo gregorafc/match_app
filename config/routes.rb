@@ -3,10 +3,11 @@ Rails.application.routes.draw do
   devise_for :users
   resources :users
 
-  root 'sportcenters#index'
+  root 'events#index'
 
   resources :events
   resources :fields
+  resources :players
 
   resources :sportcenters do
     resources :fields

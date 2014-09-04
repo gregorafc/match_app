@@ -1,8 +1,9 @@
 class Player < ActiveRecord::Base
   has_many :participation
   has_many :events, through: :participation
-  belongs_to :team
-  has_many :users, through: :team
+  
+  has_many :teams
+  has_many :users, through: :teams
 
 
   validates :name, :email, presence: true
