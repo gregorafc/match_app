@@ -43,7 +43,7 @@ gem 'devise'
 
 gem 'factory_girl_rails'
 
-gem 'simple_form'
+gem 'simple_form', '~> 3.1.0.rc1'
 
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'

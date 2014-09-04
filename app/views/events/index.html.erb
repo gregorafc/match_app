@@ -1,1 +1,19 @@
-<%= @events.each { |e| e} %>
+<h3>Lista spotkań</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nazwa gry</th>
+      <th>Miejsce rozgrywek</th>
+      <th>Lista graczy</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <% @events.each do |event| %>
+      <td><%= event.game_name %></td>
+      <td><%= event.
+
+    </tr>
+  </tbody>
+<table>
