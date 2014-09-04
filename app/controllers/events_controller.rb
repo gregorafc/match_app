@@ -41,7 +41,7 @@ class EventsController < ApplicationController
 
   def event_params
     event_params = params[:event]
-    event_params ? event_params.permit(:game_name, :field_id) : {}
+    event_params ? event_params.permit(:game_name, :field_id, :date_take_place) : {}
   end
 
   def set_event
