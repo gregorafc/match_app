@@ -6,8 +6,9 @@ class Player < ActiveRecord::Base
   has_many :users, through: :teams
 
 
-  validates :name, :email, presence: true
-  validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, on: :create }
+  
+  validates :email, :name, presence: true
+  validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i }
   validates :email, uniqueness: true
 
 end

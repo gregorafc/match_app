@@ -1,0 +1,6 @@
+<%= simple_form_for @player do |f| %>
+  <%= f.input :name, label: 'Imię' %>
+  <%= f.input :surname, label: 'Nazwisko' %>
+  <%= f.input :email, lable: 'Email' %>
+  <%= f.button :submit, label: 'Potwierdź' %>
+<% end %>
