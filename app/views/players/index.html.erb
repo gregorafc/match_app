@@ -6,6 +6,7 @@
       <th>Imię</th>
       <th>Nazwisko</th>
       <th>Email</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -14,6 +15,7 @@
         <td><%= player.name %></td>
         <td><%= player.surname %></td>
         <td><%= player.email %></td>
+        <td><%= link_to 'Usun', player, method: :delete %>
       </tr>
     <% end %>
   </tbody>

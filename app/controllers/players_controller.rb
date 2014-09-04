@@ -12,16 +12,16 @@ class PlayersController < ApplicationController
   def create
     build_player
     save_player 
-      if @player.errors.messages
-        current_user << @player
-        redirect_to players_path, notice: 'Uzytkownik juz dodany w bazie, dopisany do listy'
-      else
-        render :new
-      end
+    if @player.errors.full_messages == ["Email has already been taken"]
+      current_user.players << Player.find_by_email(@player.email)
+      redirect_to players_path, notice: "Uzytkownik juz dodany w bazie, dopisany do listy"
+    else
+      render :new
+    end
   end
 
   def destroy
-    @player.destroy
+    current_user.players.delete(@player)
     redirect_to players_path
   end
 
@@ -40,6 +40,7 @@ class PlayersController < ApplicationController
   def save_player
     if @player.save
       current_user.players << @player
+      redirect_to players_path
     end
   end
 
