@@ -1,6 +1,6 @@
 <h3>Lista spotkań</h3>
 
-<table>
+<table class="table table-bordered">
   <thead>
     <tr>
       <th>Nazwa gry</th>
@@ -9,11 +9,23 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <% @events.each do |event| %>
-      <td><%= event.game_name %></td>
-      <td><%= event.
-
-    </tr>
+    <% @events.each do |event| %>
+      <tr>      
+        <td><%= event.game_name %>
+            <%= link_to 'Usuń', event, method: :delete, data: { confirm: 'Czy na pewno?' },
+                                       class: "btn btn-info btn-xs" %>
+        </td>
+        <td><%= match_field_data(event) %></td>
+        <td>
+          <ul>
+            <% event.players do |player| %>
+              <li><%= player.email %></li>
+            <% end %>
+          </ul>
+        </td>
+      </tr>
+    <% end %>
   </tbody>
 <table>
+
+  <%= link_to 'Dodaj nowe spotkanie', new_event_path %>
