@@ -9,7 +9,7 @@ class EventsController < ApplicationController
   private
 
   def load_events
-    @events = Event.where('user_id = ?', current_user.id)
+    @events = current_user.events
   end
 
 
