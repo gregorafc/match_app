@@ -18,7 +18,7 @@
         <td><%= match_field_data(event) %></td>
         <td>
           <ul>
-            <% event.players do |player| %>
+            <% event.players.each do |player| %>
               <li><%= player.email %></li>
             <% end %>
           </ul>

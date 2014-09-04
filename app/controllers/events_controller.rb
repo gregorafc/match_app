@@ -19,6 +19,7 @@ class EventsController < ApplicationController
     redirect_to events_path
   end
 
+
   private
 
   def load_events
@@ -32,7 +33,10 @@ class EventsController < ApplicationController
   end
 
   def save_event
-    redirect_to events_path if @event.save   
+    if @event.save
+      @event.players << current_user.players
+      redirect_to events_path
+    end  
   end
 
   def event_params
