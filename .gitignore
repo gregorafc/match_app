@@ -15,5 +15,4 @@
 /log/*.log
 /tmp
 
-/.gitignore
-/config/secrets.yml
+config/secrets.yml
