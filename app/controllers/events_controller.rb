@@ -38,6 +38,7 @@ class EventsController < ApplicationController
   def save_event
     if @event.save
       @event.players << current_user.players
+      EventMailer.after_create_event(@event).deliver
       redirect_to events_path
     end  
   end

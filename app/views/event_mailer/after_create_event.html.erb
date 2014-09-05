@@ -1,5 +1,16 @@
-<h1>EventMailer#after_create_event</h1>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
-<p>
-  <%= @greeting %>, find me in app/views/event_mailer/after_create_event.html.erb
-</p>
+<h3>Zaproszenie do gry <%= @event.game_name %> przez <%= @event.user.name %></h3>
+
+<p>Data wydażenia: <%= @event.date_take_place %></p>
+<p>Miejsce spotkania:<p>
+  <ul>
+    <li><%= @event.field.sportcenter.name %></li>
+    <li><%= @event.field.name %></li>
+    <li><%= @event.field.sportcenter.adress %></li>
+    <li><%= @event.field.sportcenter.phone %></li>
+  </ul>
+<p>Opis: <%= @event.description %></p>
+
+Zapraszam
+

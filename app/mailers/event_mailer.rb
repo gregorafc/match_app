@@ -6,9 +6,11 @@ class EventMailer < ActionMailer::Base
   #
   #   en.event_mailer.after_create_event.subject
   #
-  def after_create_event
-    @greeting = "Hi"
+  def after_create_event(event)
+    @event = event
 
-    mail to: "to@example.org"
-  end
+  
+      mail to: event.players.map { |p| p.email}
+
+  end 
 end
