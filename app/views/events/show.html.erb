@@ -1,0 +1,9 @@
+<h3>Szczegóły spotkanie</h3>
+
+<p>Nazwa gry: <%= @event.game_name %></p>
+<p>Miejsce spotkania: <%= @event.field.sportcenter.name%> - <%= @event.field.name%></p>
+<p>Data wydarzenia: <%= @event.date_take_place %></p>
+<p>Opis spotkania: <%= @event.description %></p>
+
+<%= link_to 'Powrót', events_path %>
+<%= link_to 'Usuń', @event, method: :delete, date: { confirm: "Czy na pewno?"} %>

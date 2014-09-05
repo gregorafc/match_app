@@ -13,8 +13,7 @@
     <% @events.each do |event| %>
       <tr>      
         <td><%= event.game_name %>
-            <%= link_to 'Usuń', event, method: :delete, data: { confirm: 'Czy na pewno?' },
-                                       class: "btn btn-info btn-xs" %>
+            <%= link_to 'Szczegóły', event, class: "btn btn-info btn-xs" %>
         </td>
         <td><%= match_field_data(event) %></td>
         <td><%= event.date_take_place %></td>

@@ -1,8 +1,11 @@
 class EventsController < ApplicationController
-  before_action :set_event, only: [:destroy]
+  before_action :set_event, only: [:show, :destroy]
 
   def index
     load_events
+  end
+
+  def show
   end
 
   def new
