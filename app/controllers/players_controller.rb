@@ -11,10 +11,12 @@ class PlayersController < ApplicationController
 
   def create
     build_player
-    save_player 
-    if @player.errors.full_messages == ["Email has already been taken"]
+    if @player.save
+      current_user.players << @player
+      redirect_to players_path, notice: "Uzytkownik dopisany do listy"
+    elsif @player.errors.full_messages == ["Email has already been taken"]
       current_user.players << Player.find_by_email(@player.email)
-      redirect_to players_path, notice: "Uzytkownik juz dodany w bazie, dopisany do listy"
+      redirect_to players_path, notice: "Uzytkownik dopisany do listy, obecny w bazie wcze" 
     else
       render :new
     end
@@ -37,12 +39,6 @@ class PlayersController < ApplicationController
     @player.attributes = player_params
   end
 
-  def save_player
-    if @player.save
-      current_user.players << @player
-      redirect_to players_path
-    end
-  end
 
   def set_player
     @player = Player.find(params[:id])
