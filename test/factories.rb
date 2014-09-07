@@ -17,6 +17,14 @@ FactoryGirl.define do
 
   factory :event do
     game_name "Derby"
+    user_id 1
+    field_id 1
+    date_take_place '2014-10-10'
+  end
+
+  factory :user do
+    email { |n| 'test#{n}@example.com' }
+    password 'f4k3p455w0rd'
   end
 
 end

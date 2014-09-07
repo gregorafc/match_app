@@ -8,8 +8,7 @@ class EventMailer < ActionMailer::Base
   #
   def after_create_event(event)
     @event = event
-
-  
+    
       mail to: event.players.map { |p| p.email}
 
   end 
