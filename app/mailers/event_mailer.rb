@@ -1,5 +1,5 @@
 class EventMailer < ActionMailer::Base
-  default from: "from@example.com"
+  default from: "action.joe.doe@example.com"
 
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:

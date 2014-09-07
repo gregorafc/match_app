@@ -53,3 +53,7 @@ group :development do
 end
 
 gem "binding_of_caller"
+
+gem 'rspec-rails'
+gem 'capybara'
+gem 'selenium-webdriver','~> 2.42'
