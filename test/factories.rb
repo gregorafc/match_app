@@ -23,6 +23,7 @@ FactoryGirl.define do
   end
 
   factory :user do
+    name "joe"
     email { |n| 'test#{n}@example.com' }
     password 'f4k3p455w0rd'
   end

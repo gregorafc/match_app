@@ -1,6 +1,6 @@
 class FieldsController < ApplicationController
   before_action :set_field, only: [:show, :destroy, :edit, :update]
-  before_action :set_sportcenter_id, only: [:show, :save_field]
+  before_action :set_sportcenter_id, only: [:new, :show, :save_field]
 
   def show
   end
@@ -47,7 +47,7 @@ class FieldsController < ApplicationController
   end
 
   def save_field
-    redirect_to sportcenter_field_path(id: @field.id, sportcenter_id: @sportcenter_id) if @field.save
+    redirect_to sportcenters_path if @field.save
   end
 
   def field_params
