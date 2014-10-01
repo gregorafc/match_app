@@ -32,7 +32,12 @@
       
 </table>
 
-<%= link_to 'Dodaj nowy ośrodek treningowy', new_sportcenter_path, 
-                                            id: "new_sportcenter", remote: true%>
-
-<div id="form-container"></div>
+  
+<div class='container-fluid'>
+  <div class='row'>
+    <%= link_to 'Dodaj nowy ośrodek treningowy', new_sportcenter_path, 
+                                            id: "new_sportcenter", class: 'col-md-6', remote: true %>
+    <div id="form-container" class="col-md-6">
+    </div>
+  </div>
+</div>
