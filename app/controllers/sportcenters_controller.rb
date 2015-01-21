@@ -14,7 +14,7 @@ class SportcentersController < ApplicationController
 
   def create
     build_sportcenter
-    save_sportcenter or render :new
+    save_sportcenter
   end
 
   def edit
@@ -43,7 +43,15 @@ class SportcentersController < ApplicationController
   end
 
   def save_sportcenter
-    redirect_to @sportcenter if @sportcenter.save   
+    respond_to do |format|
+      if @sportcenter.save
+        format.html { redirect_to sportcenters_path }
+        format.json { render json: @sportcenter.to_json, status: 200 }
+      else
+        format.html { render 'new'}
+        format.json { render json: @sportcenter.to_json, status: :precondition_failed }
+      end
+    end
   end
 
   def set_sportcenter
