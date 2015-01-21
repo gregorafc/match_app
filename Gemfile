@@ -62,4 +62,6 @@ gem 'selenium-webdriver','~> 2.42'
 group :production do
 	gem 'pg'
 	gem 'rails_12factor'
+	gem 'heroku_secrets', github: 'alexpeattie/heroku_secrets'
 end
+
